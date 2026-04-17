@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - echo "Instalando dependencias..."
+  build:
+    commands:
+      - echo "Ejecutando pruebas..."
+      - chmod +x test.sh
+      - ./test.sh
+  post_build:
+    commands:
+      - echo "Build completado con éxito."
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: yes
