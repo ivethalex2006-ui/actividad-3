@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora DevOps</title>
+</head>
+<body>
+  <h1>Calculadora DevOps</h1>
+  <input id="a" type="number" placeholder="Número A">
+  <input id="b" type="number" placeholder="Número B">
+  <br><br>
+  <button onclick="calc('+')">+</button>
+  <button onclick="calc('-')">-</button>
+  <button onclick="calc('*')">*</button>
+  <button onclick="calc('/')">/</button>
+  <h2 id="result"></h2>
+  <script>
+    function calc(op){
+      let a = parseFloat(document.getElementById("a").value);
+      let b = parseFloat(document.getElementById("b").value);
+      let r = 0;
+      if(isNaN(a) || isNaN(b)) {
+        document.getElementById("result").innerText = "Ingresa números válidos";
+        return;
+      }
+      if(op==='+') r = a+b;
+      if(op==='-') r = a-b;
+      if(op==='*') r = a*b;
+      if(op==='/') r = b !== 0 ? a/b : "Error (Div/0)";
+      document.getElementById("result").innerText = "Resultado: " + r;
+    }
+  </script>
+</body>
+</html>
